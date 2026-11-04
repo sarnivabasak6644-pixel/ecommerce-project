@@ -29,6 +29,4 @@ document.addEventListener("DOMContentLoaded", () => {
         const walk = (x - startX) * 2; // Scroll-fast modifier
         slider.scrollLeft = scrollLeft - walk;
     });
-
-    // Touch events for mobile swiping are natively handled by overflow-x: auto and CSS scroll-snap
 });
