@@ -1,236 +1,275 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quick Cart</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playball&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <!-- Navbar -->
-    <!-- Navbar -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playball&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-dark custom-navbar py-2">
-        <div class="container-fluid align-items-center">
-            
-            <!-- Brand -->
-            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
-                Quick cart <i class="fa-solid fa-cart-shopping"></i>
-            </a>
-            
-            <!-- Location -->
-            <div class="text-white small d-none d-lg-block location-text me-3">
-                update location <i class="fa-solid fa-location-dot"></i>
-            </div>
-            
-            <!-- Mobile Toggle -->
-            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <!-- Collapsible Menu -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                
-                <!-- Responsive Search Bar -->
-                <form class="d-flex flex-grow-1 mx-lg-4 my-3 my-lg-0 search-form" role="search">
-                    <div class="input-group">
-                        <input class="form-control rounded-start-pill border-0 shadow-none px-4 py-2" type="search" placeholder="Search for products, categories..." aria-label="Search">
-                        <button class="btn bg-white rounded-end-pill border-0 px-3 text-maroon" type="submit">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                    </div>
-                </form>
+      <div class="container-fluid align-items-center">
+        <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
+          Quick cart <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+        </a>
 
-                <!-- Navigation Links -->
-                <ul class="navbar-nav small align-items-center gap-2 gap-lg-3 ms-auto">
-                    <li class="nav-item"><a class="nav-link text-white" href="#">Home categories <i class="fa-solid fa-caret-down"></i></a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#"><i class="fa-solid fa-user"></i> You</a></li>
-                    <li class="nav-item"><a class="nav-link text-white nav-pill" href="#">community</a></li>
-                    <li class="nav-item"><a class="nav-link text-white nav-pill" href="login.html">login</a></li>
-                    <li class="nav-item"><a class="nav-link text-white nav-pill" href="#">support</a></li>
-                    <li class="nav-item"><a class="nav-link text-white nav-pill" href="#">about</a></li>
-                </ul>
-            </div>
-            
+        <div class="text-white small d-none d-lg-block location-text me-3">
+          update location <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
         </div>
+
+        <button
+          class="navbar-toggler border-0 shadow-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <form
+            id="productSearchForm"
+            class="d-flex flex-grow-1 mx-lg-4 my-3 my-lg-0 search-form"
+            role="search"
+          >
+            <div class="input-group">
+              <input
+                id="productSearch"
+                name="q"
+                class="form-control rounded-start-pill border-0 shadow-none px-4 py-2"
+                type="search"
+                placeholder="Search for products, categories..."
+                aria-label="Search products"
+                aria-controls="productSlider"
+              />
+              <button
+                class="btn bg-white rounded-end-pill border-0 px-3 text-maroon"
+                type="submit"
+                aria-label="Submit search"
+              >
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+              </button>
+            </div>
+          </form>
+
+          <ul class="navbar-nav small align-items-center gap-2 gap-lg-3 ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">
+                Home categories <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">
+                <i class="fa-solid fa-user" aria-hidden="true"></i> You
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white nav-pill" href="#">community</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white nav-pill" href="login.html">login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white nav-pill" href="#">support</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white nav-pill" href="#">about</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
 
-    <!-- Main Content -->
-    <div class="container my-4">
-        <div class="row g-4">
-            
-            <!-- Left Banner Card -->
-            <div class="col-lg-6">
-                <div class="custom-card p-4 h-100 position-relative d-flex flex-column justify-content-between">
-                    <div>
-                        <h4 class="fw-bold mb-0">Everyday marketplace essentials,</h4>
-                        <h4 class="cursive-text mb-4">artfully curated</h4>
-                    </div>
-                    
-                    <div class="row align-items-center mt-3 position-relative">
-                        <div class="col-7">
-                            <img src="assets/images/modern_bags.png" alt="Modern bags" class="img-fluid rounded shadow-sm">
-                        </div>
-                        <div class="col-5">
-                            <p class="small text-muted mb-0">Elevate your everyday style with our Modern Bags Collection, featuring sleek structured totes and elegant crossbody designs.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Diwali Badge -->
-                    <div class="diwali-badge text-center text-white p-3 rounded-circle shadow">
-                        <span class="fw-bold d-block">Diwali offers</span>
-                        <span class="cursive-text d-block">grab now</span>
-                    </div>
-                    
-                    <h5 class="fw-bold mt-4 mb-0">Modern bags collection</h5>
-                </div>
+    <main class="container my-4">
+      <div class="row g-4">
+        <section class="col-lg-6" aria-label="Featured collection">
+          <div
+            class="custom-card p-4 h-100 position-relative d-flex flex-column justify-content-between"
+          >
+            <div>
+              <h1 class="h4 fw-bold mb-0">Everyday marketplace essentials,</h1>
+              <p class="h4 cursive-text mb-4">artfully curated</p>
             </div>
 
-            <!-- Right Best Sells Card -->
-            <div class="col-lg-6">
-                <div class="custom-card p-4 h-100 d-flex flex-column align-items-center text-center">
-                    <div class="w-100 text-start mb-3">
-                        <h4 class="fw-bold mb-0">Best sells</h4>
-                        <p class="small text-muted cursive-text">customer's own preference helps to makes your choice in full</p>
-                    </div>
-
-                    <!-- Horizontal Slider Container -->
-                    <div class="slider-wrapper w-100 mb-3">
-                        <div class="image-slider" id="productSlider">
-                            <div class="slide-item">
-                                <img src="assets/images/beauty products.png" alt="Beauty products">
-                                <span class="d-block small mt-1">Beauty Products</span>
-                            </div>
-                            <div class="slide-item">
-                                <img src="assets/images/modern_bags.png" alt="Women's bags">
-                                <span class="d-block small mt-1">Women's bags</span>
-                            </div>
-                            <div class="slide-item">
-                                <img src="assets/images/cookies.png" alt="Cookies">
-                                <span class="d-block small mt-1">Snacks</span>
-                            </div>
-                             <div class="slide-item">
-                                <img src="assets/images/electronics.png" alt="Mobile phones">
-                                <span class="d-block small mt-1">Mobile phones</span>
-                            </div>
-                            <div class="slide-item">
-                                <img src="assets/images/electronics.png" alt="Laptops">
-                                <span class="d-block small mt-1">Laptops</span>
-                            </div>
-                            <div class="slide-item">
-                                <img src="assets/images/soft toys3.png" alt="Toys">
-                                <span class="d-block small mt-1">Toys</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Details -->
-                    <div class="product-details mt-2">
-                        <div class="dots-indicator mb-2">
-                            <span></span><span class="active"></span><span></span>
-                        </div>
-                        <h5 class="fw-bold mb-0">4.9 <i class="fa-solid fa-star small"></i></h5>
-                        <p class="small mb-2">2,400+ Verified Reviews</p>
-                        <ul class="list-unstyled small mb-3 text-center">
-                            <li>48-Hour</li>
-                            <li>Carbon-Neutral Dispatch</li>
-                            <li>5-Year</li>
-                            <li>Modular Repair Warranty</li>
-                        </ul>
-                        <button class="btn custom-btn rounded-pill px-4 text-white">see more</button>
-                    </div>
-                </div>
+            <div class="row align-items-center mt-3 position-relative">
+              <div class="col-7">
+                <img
+                  src="assets/images/modern_bags.png"
+                  alt="Modern bags collection"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+              <div class="col-5">
+                <p class="small text-muted mb-0">
+                  Elevate your everyday style with our Modern Bags Collection,
+                  featuring sleek structured totes and elegant crossbody designs.
+                </p>
+              </div>
             </div>
+
+            <div
+              class="diwali-badge text-center text-white p-3 rounded-circle shadow"
+            >
+              <span class="fw-bold d-block">Diwali offers</span>
+              <span class="cursive-text d-block">grab now</span>
+            </div>
+
+            <h2 class="h5 fw-bold mt-4 mb-0">Modern bags collection</h2>
+          </div>
+        </section>
+
+        <section class="col-lg-6" aria-labelledby="best-sellers-title">
+          <div
+            class="custom-card p-4 h-100 d-flex flex-column align-items-center text-center"
+          >
+            <div class="w-100 text-start mb-3">
+              <h2 class="h4 fw-bold mb-0" id="best-sellers-title">Best sellers</h2>
+              <p class="small text-muted cursive-text">
+                Customer favorites to help you find your next pick.
+              </p>
+            </div>
+
+            <div class="slider-wrapper w-100 mb-3">
+              <div class="image-slider" id="productSlider">
+                <div class="slide-item">
+                  <img src="assets/images/beauty%20products.png" alt="Beauty products" />
+                  <span class="d-block small mt-1">Beauty products</span>
+                </div>
+                <div class="slide-item">
+                  <img src="assets/images/modern_bags.png" alt="Women's bags" />
+                  <span class="d-block small mt-1">Women's bags</span>
+                </div>
+                <div class="slide-item">
+                  <img src="assets/images/cookies.png" alt="Cookies and snacks" />
+                  <span class="d-block small mt-1">Snacks</span>
+                </div>
+                <div class="slide-item">
+                  <img src="assets/images/electronics.png" alt="Mobile phones" />
+                  <span class="d-block small mt-1">Mobile phones</span>
+                </div>
+                <div class="slide-item">
+                  <img src="assets/images/electronics.png" alt="Laptops" />
+                  <span class="d-block small mt-1">Laptops</span>
+                </div>
+                <div class="slide-item">
+                  <img src="assets/images/soft%20toys3.png" alt="Soft toys" />
+                  <span class="d-block small mt-1">Toys</span>
+                </div>
+              </div>
+            </div>
+            <p
+              class="search-status small text-muted mt-2 mb-0"
+              id="searchStatus"
+              role="status"
+              aria-live="polite"
+            ></p>
+
+            <div class="product-details mt-2">
+              <div class="dots-indicator mb-2" aria-hidden="true">
+                <span></span><span class="active"></span><span></span>
+              </div>
+              <h3 class="h5 fw-bold mb-0">
+                4.9 <i class="fa-solid fa-star small" aria-hidden="true"></i>
+              </h3>
+              <p class="small mb-2">2,400+ Verified Reviews</p>
+              <ul class="list-unstyled small mb-3 text-center">
+                <li>48-Hour</li>
+                <li>Carbon-Neutral Dispatch</li>
+                <li>5-Year</li>
+                <li>Modular Repair Warranty</li>
+              </ul>
+              <button class="btn custom-btn rounded-pill px-4 text-white" type="button">
+                see more
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section class="mt-5 text-center position-relative" aria-labelledby="recommended-title">
+        <h2 class="h3 fw-bold mb-0" id="recommended-title">
+          Top recommended products
+        </h2>
+        <p
+          class="h4 cursive-text text-muted mb-4 d-inline-block px-3 py-1 bg-light rounded-pill border"
+        >
+          customer's choice
+        </p>
+        <i
+          class="fa-solid fa-cart-shopping fs-3 position-absolute recommended-cart-icon"
+          aria-hidden="true"
+        ></i>
+
+        <div class="row g-3 mt-2">
+          <div class="col-6 col-md-3"><div class="blank-card"></div></div>
+          <div class="col-6 col-md-3"><div class="blank-card"></div></div>
+          <div class="col-6 col-md-3"><div class="blank-card"></div></div>
+          <div class="col-6 col-md-3"><div class="blank-card"></div></div>
+          <div class="col-6 col-md-3"><div class="blank-card"></div></div>
+          <div class="col-6 col-md-3"><div class="blank-card"></div></div>
+          <div class="col-6 col-md-3"><div class="blank-card"></div></div>
+          <div class="col-6 col-md-3"><div class="blank-card"></div></div>
         </div>
+      </section>
+    </main>
 
-        <!-- Top Recommended Products Section -->
-        <div class="mt-5 text-center position-relative">
-            <h3 class="fw-bold mb-0">Top recomended products</h3>
-            <h4 class="cursive-text text-muted mb-4 d-inline-block px-3 py-1 bg-light rounded-pill border">customer's choice</h4>
-            <i class="fa-solid fa-cart-shopping fs-3 position-absolute" style="right:10%; top:0; color:#e4d5c7;"></i>
-            
-            <div class="row g-3 mt-2">
-                <div class="col-6 col-md-3">
-                    <div class="blank-card"></div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="blank-card"></div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="blank-card"></div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="blank-card"></div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="blank-card"></div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="blank-card"></div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="blank-card"></div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="blank-card"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
     <footer class="custom-footer mt-5 py-5">
-        <div class="container">
-            <div class="row g-4 align-items-start">
-                
-                <!-- Logo Side -->
-                <div class="col-md-4 text-center text-md-start">
-                    <div class="footer-logo-circle mb-3 mx-auto mx-md-0">
-                        <i class="fa-solid fa-cart-shopping cart-icon-lg"></i>
-                    </div>
-                    <h2 class="fw-bold">Quick cart</h2>
-                </div>
-
-                <!-- About Box -->
-                <div class="col-md-5">
-                    <div class="about-box p-4 border rounded-4 h-100">
-                        <h4 class="text-maroon mb-4">About</h4>
-                        <p class="fs-5">description</p>
-                    </div>
-                </div>
-
-                <!-- Links Side -->
-                <div class="col-md-3 d-flex justify-content-between">
-                    <div>
-                        <h6 class="fw-bold mb-3">Learn more</h6>
-                        <ul class="list-unstyled footer-links">
-                            <li><a href="#">content</a></li>
-                            <li><a href="#">copywrite</a></li>
-                            <li><a href="#">overview</a></li>
-                            <li><a href="#">help & support</a></li>
-                            <li><a href="#">privacy & security</a></li>
-                            <li><a href="#">terms of service</a></li>
-                            <li><a href="#">report</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h6 class="fw-bold mb-3">Social Links</h6>
-                        <a href="#" class="text-dark fs-4"><i class="fa-brands fa-instagram"></i></a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row g-4 align-items-start">
+          <div class="col-md-4 text-center text-md-start">
+            <div class="footer-logo-circle mb-3 mx-auto mx-md-0">
+              <i class="fa-solid fa-cart-shopping cart-icon-lg" aria-hidden="true"></i>
             </div>
+            <h2 class="fw-bold">Quick cart</h2>
+          </div>
+
+          <div class="col-md-5">
+            <div class="about-box p-4 border rounded-4 h-100">
+              <h2 class="h4 text-maroon mb-4">About</h2>
+              <p class="fs-5">description</p>
+            </div>
+          </div>
+
+          <div class="col-md-3 d-flex justify-content-between">
+            <div>
+              <h3 class="h6 fw-bold mb-3">Learn more</h3>
+              <ul class="list-unstyled footer-links">
+                <li><a href="#">content</a></li>
+                <li><a href="#">copyright</a></li>
+                <li><a href="#">overview</a></li>
+                <li><a href="#">help &amp; support</a></li>
+                <li><a href="#">privacy &amp; security</a></li>
+                <li><a href="#">terms of service</a></li>
+                <li><a href="#">report</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="h6 fw-bold mb-3">Social links</h3>
+              <a href="#" class="text-dark fs-4" aria-label="Instagram">
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
         </div>
+      </div>
     </footer>
 
-    <!-- Bootstrap & Custom JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

@@ -1,5 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
     const slider = document.getElementById('productSlider');
+    const searchForm = document.getElementById('productSearchForm');
+    const searchInput = document.getElementById('productSearch');
+    const searchStatus = document.getElementById('searchStatus');
+
+    if (!slider || !searchForm || !searchInput || !searchStatus) return;
+
+    const products = Array.from(slider.querySelectorAll('.slide-item'));
+
+    const filterProducts = () => {
+        const query = searchInput.value.trim().toLocaleLowerCase();
+        let visibleCount = 0;
+
+        products.forEach((product) => {
+            const imageAlt = product.querySelector('img')?.alt || '';
+            const searchableText = `${product.textContent} ${imageAlt}`.toLocaleLowerCase();
+            const matches = searchableText.includes(query);
+
+            product.hidden = !matches;
+            if (matches) visibleCount += 1;
+        });
+
+        slider.scrollLeft = 0;
+        searchStatus.textContent = query
+            ? visibleCount === 0
+                ? `No products found for "${searchInput.value.trim()}".`
+                : `${visibleCount} result${visibleCount === 1 ? '' : 's'} found.`
+            : '';
+    };
+
+    searchInput.addEventListener('input', filterProducts);
+    searchForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        filterProducts();
+    });
+
     let isDown = false;
     let startX;
     let scrollLeft;
