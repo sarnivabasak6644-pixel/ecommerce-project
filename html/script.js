@@ -64,4 +64,76 @@ document.addEventListener("DOMContentLoaded", () => {
         const walk = (x - startX) * 2; // Scroll-fast modifier
         slider.scrollLeft = scrollLeft - walk;
     });
+    // Slider Arrow Navigation
+    const slideLeftBtn = document.getElementById('slideLeft');
+    const slideRightBtn = document.getElementById('slideRight');
+
+    if (slideLeftBtn && slideRightBtn && slider) {
+        // Calculate the width of one item + gap for smooth step scrolling
+        const scrollAmount = 165;
+
+        slideLeftBtn.addEventListener('click', () => {
+            slider.scrollBy({
+                top: 0,
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+
+        slideRightBtn.addEventListener('click', () => {
+            slider.scrollBy({
+                top: 0,
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+    }
+    // Categories Popup Toggle Logic
+    const categoriesTrigger = document.getElementById('categoriesTrigger');
+    const categoriesPopup = document.getElementById('categoriesPopup');
+
+    if (categoriesTrigger && categoriesPopup) {
+        categoriesTrigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            categoriesPopup.classList.toggle('d-none');
+
+            // Auto-close user popup if it is open
+            if (typeof userPopup !== 'undefined' && userPopup) {
+                userPopup.classList.add('d-none');
+            }
+        });
+
+        // Close categories popup when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!categoriesTrigger.contains(e.target) && !categoriesPopup.contains(e.target)) {
+                categoriesPopup.classList.add('d-none');
+            }
+        });
+    }
+
+    // Update existing userTrigger event listener to auto-close categories popup
+    if (typeof userTrigger !== 'undefined' && userTrigger) {
+        userTrigger.addEventListener('click', () => {
+            if (categoriesPopup) {
+                categoriesPopup.classList.add('d-none');
+            }
+        });
+    }
 });
+// User Popup Toggle Logic
+const userTrigger = document.getElementById('userPopupTrigger');
+const userPopup = document.getElementById('userPopup');
+
+if (userTrigger && userPopup) {
+    userTrigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        userPopup.classList.toggle('d-none');
+    });
+
+    // Close popup when clicking outside of it
+    document.addEventListener('click', (e) => {
+        if (!userTrigger.contains(e.target) && !userPopup.contains(e.target)) {
+            userPopup.classList.add('d-none');
+        }
+    });
+}

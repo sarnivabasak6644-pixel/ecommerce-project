@@ -48,14 +48,70 @@
                 <ul class="navbar-nav small align-items-center gap-2 gap-lg-3 ms-auto">
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#">
-                            Home categories
-                            <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+                            Home
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">
-                            <i class="fa-solid fa-user" aria-hidden="true"></i> You
+                    <li class="nav-item position-relative">
+                        <a class="nav-link text-white" href="#" id="categoriesTrigger">
+                            Categories <i class="fa-solid fa-caret-down"></i>
                         </a>
+
+                        <!-- Categories Popup Menu -->
+                        <div class="categories-popup shadow-lg d-none" id="categoriesPopup">
+                            <ul class="list-unstyled mb-0">
+                                <li class="category-item"><a href="#">cloths</a></li>
+                                <li class="category-item"><a href="#">electronics</a></li>
+                                <li class="category-item"><a href="#">grooming</a></li>
+                                <li class="category-item"><a href="#">kids/child</a></li>
+                                <li class="category-item"><a href="#">grocery</a></li>
+                                <li class="category-item"><a href="#">makeup</a></li>
+                                <li class="category-item"><a href="#">decorations</a></li>
+                                <li class="category-item border-0"><a href="#">fashion</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- User Account Item with Popup -->
+                    <li class="nav-item position-relative">
+                        <a class="nav-link text-white user-trigger" href="#" id="userPopupTrigger">
+                            <i class="fa-solid fa-user"></i> You
+                        </a>
+
+                        <!-- User Popup Menu -->
+                        <div class="user-popup shadow-lg d-none" id="userPopup">
+                            <!-- Profile Header -->
+                            <div class="profile-section bg-white p-3 rounded-4 mb-3 d-flex align-items-center gap-3">
+                                <div class="avatar-circle">
+                                    <i class="fa-solid fa-user text-maroon fs-1"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold mb-1">User name</h5>
+                                    <div class="small text-dark mb-1 d-flex align-items-center gap-1">
+                                        <i class="fa-solid fa-location-dot"></i> address
+                                    </div>
+                                    <div class="small fw-semibold">
+                                        Mobile: <span class="fw-normal">xxxxxxxx65</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Links -->
+                            <div class="popup-links mb-4 ms-2">
+                                <a href="#" class="d-block text-dark text-decoration-none fs-5 mb-2">
+                                    your cart <i class="fa-solid fa-cart-shopping text-maroon"></i>
+                                </a>
+                                <a href="#" class="d-block text-dark text-decoration-none fs-5">
+                                    favourites <i class="fa-solid fa-heart text-maroon"></i>
+                                </a>
+                            </div>
+
+                            <!-- Keep Shopping Area -->
+                            <h5 class="fw-bold mb-2 ms-2">keep shopping</h5>
+                            <div class="keep-shopping-box p-3 rounded-4 d-flex justify-content-between gap-2">
+                                <div class="shopping-item-card rounded-3"></div>
+                                <div class="shopping-item-card rounded-3"></div>
+                                <div class="shopping-item-card rounded-3"></div>
+                            </div>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white nav-pill" href="#">community</a>
@@ -117,55 +173,69 @@
                         </p>
                     </div>
 
-                    <div class="slider-wrapper w-100 mb-3">
-                        <div class="image-slider" id="productSlider">
-                            <div class="slide-item">
-                                <img src="assets/images/beauty%20products.png" alt="Beauty products" />
-                                <span class="d-block small mt-1">Beauty products</span>
-                            </div>
-                            <div class="slide-item">
-                                <img src="assets/images/modern_bags.png" alt="Women's bags" />
-                                <span class="d-block small mt-1">Women's bags</span>
-                            </div>
-                            <div class="slide-item">
-                                <img src="assets/images/cookies.png" alt="Cookies and snacks" />
-                                <span class="d-block small mt-1">Snacks</span>
-                            </div>
-                            <div class="slide-item">
-                                <img src="assets/images/electronics.png" alt="Mobile phones" />
-                                <span class="d-block small mt-1">Mobile phones</span>
-                            </div>
-                            <div class="slide-item">
-                                <img src="assets/images/electronics.png" alt="Laptops" />
-                                <span class="d-block small mt-1">Laptops</span>
-                            </div>
-                            <div class="slide-item">
-                                <img src="assets/images/soft%20toys3.png" alt="Soft toys" />
-                                <span class="d-block small mt-1">Toys</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="search-status small text-muted mt-2 mb-0" id="searchStatus" role="status"
-                        aria-live="polite"></p>
+                    <<!-- Horizontal Slider Container with Arrows -->
+                        <div class="slider-container position-relative w-100 mb-3">
 
-                    <div class="product-details mt-2">
-                        <div class="dots-indicator mb-2" aria-hidden="true">
-                            <span></span><span class="active"></span><span></span>
+                            <!-- Left Arrow -->
+                            <button class="btn slider-arrow left-arrow shadow-none" id="slideLeft">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+
+                            <div class="slider-wrapper w-100">
+                                <div class="image-slider" id="productSlider">
+                                    <div class="slide-item">
+                                        <img src="assets\images\beauty products.png" alt="makeup kit">
+                                        <span class="d-block small mt-1">Beauty Products</span>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets\images\modern_bags.png" alt="Bags">
+                                        <span class="d-block small mt-1">Designer Bags</span>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets\images\shoes.jpeg" alt="Shoes">
+                                        <span class="d-block small mt-1">Shoes</span>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets\images\cookies.png" alt="Snacks">
+                                        <span class="d-block small mt-1">Snacks</span>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets\images\drinks.jpeg" alt="drinks">
+                                        <span class="d-block small mt-1">Drinks</span>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets\images\kitchen utensils.jpeg" alt="kitchen">
+                                        <span class="d-block small mt-1">Utensils</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Arrow -->
+                            <button class="btn slider-arrow right-arrow shadow-none" id="slideRight">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
                         </div>
-                        <h3 class="h5 fw-bold mb-0">
-                            4.9 <i class="fa-solid fa-star small" aria-hidden="true"></i>
-                        </h3>
-                        <p class="small mb-2">2,400+ Verified Reviews</p>
-                        <ul class="list-unstyled small mb-3 text-center">
-                            <li>48-Hour</li>
-                            <li>Carbon-Neutral Dispatch</li>
-                            <li>5-Year</li>
-                            <li>Modular Repair Warranty</li>
-                        </ul>
-                        <button class="btn custom-btn rounded-pill px-4 text-white" type="button">
-                            see more
-                        </button>
-                    </div>
+                        <p class="search-status small text-muted mt-2 mb-0" id="searchStatus" role="status"
+                            aria-live="polite"></p>
+
+                        <div class="product-details mt-2">
+                            <div class="dots-indicator mb-2" aria-hidden="true">
+                                <span></span><span class="active"></span><span></span>
+                            </div>
+                            <h3 class="h5 fw-bold mb-0">
+                                4.9 <i class="fa-solid fa-star small" aria-hidden="true"></i>
+                            </h3>
+                            <p class="small mb-2">2,400+ Verified Reviews</p>
+                            <ul class="list-unstyled small mb-3 text-center">
+                                <li>48-Hour</li>
+                                <li>Carbon-Neutral Dispatch</li>
+                                <li>5-Year</li>
+                                <li>Modular Repair Warranty</li>
+                            </ul>
+                            <button class="btn custom-btn rounded-pill px-4 text-white" type="button">
+                                see more
+                            </button>
+                        </div>
                 </div>
             </section>
         </div>
@@ -248,6 +318,8 @@
                         <i class="fa-solid fa-cart-shopping cart-icon-lg" aria-hidden="true"></i>
                     </div>
                     <h2 class="fw-bold">Quick cart</h2>
+                    <p class="h4 cursive-text mb-4">"Designed for how you live, work, and unwind—delivered to your
+                        door."</p>
                 </div>
 
                 <div class="col-md-5">
@@ -274,11 +346,16 @@
                             <li><a href="#">report</a></li>
                         </ul>
                     </div>
-                    <div>
+                    <div class="social_links">
                         <h3 class="h6 fw-bold mb-3">Social links</h3>
                         <a href="#" class="text-dark fs-4" aria-label="Instagram">
                             <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                         </a>
+                        <a href="#" class="text-dark fs-4" aria-label="linkdin">
+                            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="text-dark fs-4" aria-label="Youtube"> <i
+                                class="fa-brands fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
