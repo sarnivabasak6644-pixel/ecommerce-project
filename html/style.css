@@ -1,22 +1,201 @@
-*{
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    border: border-box;
+/* Color Palette & Base Styles */
+:root {
+    --bg-maroon: #681920;
+    --bg-olive: #afb1a2;
+    --card-beige: #ebdccb;
+    --text-dark: #1a1a1a;
+    --text-maroon: #681920;
 }
-.navbar{
-    background-color: black;
-    color: white;
-    height: 70px;
+
+body {
+    background-color: var(--bg-olive);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+}
+
+.cursive-text {
+    font-family: 'Playball', cursive;
+    color: var(--text-maroon);
+}
+
+/* Navbar */
+.custom-navbar {
+    background-color: var(--bg-maroon);
+}
+.location-text {
+    font-size: 0.8rem;
+    margin-left: 15px;
+}
+.nav-pill {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 2px 12px !important;
+    margin: 0 5px;
+}
+
+/* Cards */
+.custom-card {
+    background-color: var(--card-beige);
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* Badges */
+.discount-badge {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    transform: rotate(-35deg);
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    z-index: 2;
+}
+
+.diwali-badge {
+    background-color: var(--bg-maroon);
+    width: 120px;
+    height: 120px;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+}
+
+/* Horizontal Slider */
+.slider-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.image-slider {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    cursor: grab;
+}
+
+.image-slider::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+}
+
+.image-slider:active {
+    cursor: grabbing;
+}
+
+.slide-item {
+    flex: 0 0 calc(33.333% - 10px);
+    scroll-snap-align: start;
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid var(--bg-maroon);
+    pointer-events: none; /* helps with js drag */
+}
+
+.slide-item img {
+    width: 100%;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+/* Details Section */
+.dots-indicator span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #a0a0a0;
+    border-radius: 50%;
+    margin: 0 3px;
+}
+.dots-indicator span.active {
+    background-color: var(--bg-maroon);
+}
+
+.custom-btn {
+    background-color: #925458;
+}
+.custom-btn:hover {
+    background-color: var(--bg-maroon);
+}
+
+/* Bottom Cards */
+.blank-card {
+    background-color: var(--card-beige);
+    border-radius: 20px;
+    height: 350px;
+    width: 100%;
+}
+
+/* Footer */
+.custom-footer {
+    background-color: var(--bg-olive);
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.footer-logo-circle {
+    width: 160px;
+    height: 160px;
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 50%;
+    display: flex;
     align-items: center;
+    justify-content: center;
 }
-.nav-search{
-    display: flex;
-    width: 500px;
-    height: 40px;
+
+.cart-icon-lg {
+    font-size: 5rem;
+    color: var(--bg-maroon);
 }
-.nav-brand{
-    height: 50px;
-    width: 110px;
+
+.about-box {
+    border-color: rgba(0,0,0,0.15) !important;
+    background-color: transparent;
+    min-height: 250px;
+}
+
+.text-maroon {
+    color: var(--bg-maroon);
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+.footer-links a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .slide-item {
+        flex: 0 0 calc(50% - 10px);
+    }
+    .diwali-badge {
+        width: 100px;
+        height: 100px;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+@media (max-width: 576px) {
+    .slide-item {
+        flex: 0 0 calc(80% - 10px);
+    }
+    .blank-card {
+        height: 250px;
+    }
 }
