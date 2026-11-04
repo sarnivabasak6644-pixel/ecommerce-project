@@ -16,20 +16,40 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar py-1">
-        <div class="container-fluid">
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar py-2">
+        <div class="container-fluid align-items-center">
+            
+            <!-- Brand -->
             <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
                 Quick cart <i class="fa-solid fa-cart-shopping"></i>
             </a>
-            <div class="text-white small me-auto d-none d-lg-block location-text">
+            
+            <!-- Location -->
+            <div class="text-white small d-none d-lg-block location-text me-3">
                 update location <i class="fa-solid fa-location-dot"></i>
             </div>
             
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav small align-items-center gap-3">
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Collapsible Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                
+                <!-- Responsive Search Bar -->
+                <form class="d-flex flex-grow-1 mx-lg-4 my-3 my-lg-0 search-form" role="search">
+                    <div class="input-group">
+                        <input class="form-control rounded-start-pill border-0 shadow-none px-4 py-2" type="search" placeholder="Search for products, categories..." aria-label="Search">
+                        <button class="btn bg-white rounded-end-pill border-0 px-3 text-maroon" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Navigation Links -->
+                <ul class="navbar-nav small align-items-center gap-2 gap-lg-3 ms-auto">
                     <li class="nav-item"><a class="nav-link text-white" href="#">Home categories <i class="fa-solid fa-caret-down"></i></a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="#"><i class="fa-solid fa-user"></i> You</a></li>
                     <li class="nav-item"><a class="nav-link text-white nav-pill" href="#">community</a></li>
@@ -38,6 +58,7 @@
                     <li class="nav-item"><a class="nav-link text-white nav-pill" href="#">about</a></li>
                 </ul>
             </div>
+            
         </div>
     </nav>
 
@@ -58,7 +79,7 @@
                             <img src="assets/images/modern bags.png" alt="Modern bags" class="img-fluid rounded shadow-sm">
                         </div>
                         <div class="col-5">
-                            <p class="small text-muted mb-0">some description of product 2-3 linev</p>
+                            <p class="small text-muted mb-0">Elevate your everyday style with our Modern Bags Collection, featuring sleek structured totes and elegant crossbody designs.</p>
                         </div>
                     </div>
                     
@@ -84,16 +105,28 @@
                     <div class="slider-wrapper w-100 mb-3">
                         <div class="image-slider" id="productSlider">
                             <div class="slide-item">
-                                <img src="https://placehold.co/150x150/fff/333?text=makeup+kit" alt="makeup kit">
-                                <span class="d-block small mt-1">makeup kit</span>
+                                <img src="assets\images\beauty products.png" alt="makeup kit">
+                                <span class="d-block small mt-1">Beauty Products</span>
                             </div>
                             <div class="slide-item">
-                                <img src="https://placehold.co/150x150/fff/333?text=Bags" alt="Bags">
-                                <span class="d-block small mt-1">Bags</span>
+                                <img src="assets\images\modern bags.png" alt="Bags">
+                                <span class="d-block small mt-1">Bags for Womens</span>
                             </div>
                             <div class="slide-item">
-                                <img src="https://placehold.co/150x150/fff/333?text=Cookis" alt="Cookies">
-                                <span class="d-block small mt-1">Cookis</span>
+                                <img src="assets\images\cookies.png" alt="Cookies">
+                                <span class="d-block small mt-1">Snacks</span>
+                            </div>
+                             <div class="slide-item">
+                                <img src="assets\images\beauty products.png" alt="mobiles">
+                                <span class="d-block small mt-1">Mobiles</span>
+                            </div>
+                            <div class="slide-item">
+                                <img src="assets\images\modern bags.png" alt="laptops">
+                                <span class="d-block small mt-1">Laptops</span>
+                            </div>
+                            <div class="slide-item">
+                                <img src="assets\images\soft toys3.png" alt="Toys">
+                                <span class="d-block small mt-1">Toys</span>
                             </div>
                         </div>
                     </div>
@@ -124,6 +157,18 @@
             <i class="fa-solid fa-cart-shopping fs-3 position-absolute" style="right:10%; top:0; color:#e4d5c7;"></i>
             
             <div class="row g-3 mt-2">
+                <div class="col-6 col-md-3">
+                    <div class="blank-card"></div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="blank-card"></div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="blank-card"></div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="blank-card"></div>
+                </div>
                 <div class="col-6 col-md-3">
                     <div class="blank-card"></div>
                 </div>
